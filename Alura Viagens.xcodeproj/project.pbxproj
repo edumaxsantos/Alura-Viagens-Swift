@@ -74,10 +74,9 @@
 			children = (
 				FB5D04F8266EEF61000C7348 /* AppDelegate.swift */,
 				FB5D04FA266EEF61000C7348 /* SceneDelegate.swift */,
-				FB5D04FC266EEF61000C7348 /* ViewController.swift */,
-				FB5D0510266F0F93000C7348 /* TableViewCell.swift */,
-				FB5D050C266F0D0B000C7348 /* Viagem.swift */,
-				FB5D050E266F0D96000C7348 /* ViagemDAO.swift */,
+				FB5D051D26703FFE000C7348 /* Model */,
+				FB5D051E2670400F000C7348 /* Home */,
+				FB5D052126704040000C7348 /* ViagemDAO */,
 				FB5D04FE266EEF61000C7348 /* Main.storyboard */,
 				FB5D0512266F13C4000C7348 /* Assets */,
 				FB5D0501266EEF62000C7348 /* Assets.xcassets */,
@@ -97,6 +96,47 @@
 				FB5D0517266F13C4000C7348 /* img1.png */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		FB5D051D26703FFE000C7348 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB5D050C266F0D0B000C7348 /* Viagem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB5D051E2670400F000C7348 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FB5D052026704035000C7348 /* View */,
+				FB5D051F26704028000C7348 /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FB5D051F26704028000C7348 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FB5D04FC266EEF61000C7348 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB5D052026704035000C7348 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB5D0510266F0F93000C7348 /* TableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB5D052126704040000C7348 /* ViagemDAO */ = {
+			isa = PBXGroup;
+			children = (
+				FB5D050E266F0D96000C7348 /* ViagemDAO.swift */,
+			);
+			path = ViagemDAO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
