@@ -52,7 +52,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 175
+        return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone ? 175 : 260
     }
 
 
