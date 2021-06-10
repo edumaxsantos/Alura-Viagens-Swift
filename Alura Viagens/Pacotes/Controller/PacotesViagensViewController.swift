@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PacotesViagensViewController: UIViewController, UICollectionViewDataSource {
+class PacotesViagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     // MARK: - Outlets
     
@@ -22,6 +22,7 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         self.colecaoPacotesViagem.dataSource = self
+        self.colecaoPacotesViagem.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -55,14 +56,10 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         return celulaPacote
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - FlowLayout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let larguraCelula = collectionView.bounds.width / 2
+        return CGSize(width: larguraCelula - 15, height: 160)
     }
-    */
 
 }
