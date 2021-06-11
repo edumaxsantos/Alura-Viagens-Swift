@@ -7,15 +7,18 @@
 
 import UIKit
 
-class PacotesViagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class PacotesViagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
 
     // MARK: - Outlets
     
+    @IBOutlet weak var pesquisarViagens: UISearchBar!
     @IBOutlet weak var colecaoPacotesViagem: UICollectionView!
+    @IBOutlet weak var labelContadorPacotes: UILabel!
     
     // MARK: - Propriedades
     
-    let listaViagens: [Viagem] = ViagemDAO().retornaTodasAsViagens()
+    let listaComTodasViagens: [Viagem] = ViagemDAO().retornaTodasAsViagens()
+    var listaViagens: [Viagem] = []
     
     // MARK: - Life cycle
     
@@ -23,6 +26,9 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         super.viewDidLoad()
         self.colecaoPacotesViagem.dataSource = self
         self.colecaoPacotesViagem.delegate = self
+        self.pesquisarViagens.delegate = self
+        listaViagens = listaComTodasViagens
+        self.labelContadorPacotes.text = self.atualizaContadorLabel()
 
         // Do any additional setup after loading the view.
     }
@@ -41,8 +47,6 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         
         let viagemAtual = listaViagens[indexPath.item]
         
-        print(celulaPacote.frame.size)
-        
         celulaPacote.labelTitulo.text = viagemAtual.titulo
         celulaPacote.labelPreco.text = "R$ \(viagemAtual.preco)"
         celulaPacote.labelQuantidadeDias.text = "\(viagemAtual.quantidadeDeDias) dias"
@@ -60,6 +64,22 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let larguraCelula = collectionView.bounds.width / 2
         return CGSize(width: larguraCelula - 15, height: 160)
+    }
+    
+    // MARK: - SearchDeleate
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        listaViagens = listaComTodasViagens
+        if searchText != "" {
+            let filtroListaViagem = NSPredicate(format: "titulo contains %@", searchText)
+            let listaFiltrada: Array<Viagem> = (listaViagens as NSArray).filtered(using: filtroListaViagem) as! Array
+            listaViagens = listaFiltrada
+        }
+        self.labelContadorPacotes.text = self.atualizaContadorLabel()
+        colecaoPacotesViagem.reloadData()
+    }
+    
+    func atualizaContadorLabel() -> String {
+        return listaViagens.count == 1 ? "1 pacote encontrado" : "\(listaViagens.count) pacotes encontrados"
     }
 
 }
