@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PacotesViagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class PacotesViagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UICollectionViewDelegate {
 
     // MARK: - Outlets
     
@@ -76,6 +76,13 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         }
         self.labelContadorPacotes.text = self.atualizaContadorLabel()
         colecaoPacotesViagem.reloadData()
+    }
+    
+    // MARK: - Collection
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(identifier: "detalhes") as! DetalhesViagemViewController
+        self.present(controller, animated: true)
     }
     
     func atualizaContadorLabel() -> String {
