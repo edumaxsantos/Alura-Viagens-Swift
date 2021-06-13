@@ -15,6 +15,7 @@ class DetalhesViagemViewController: UIViewController {
     @IBOutlet weak var labelDataViagem: UILabel!
     @IBOutlet weak var labelPrecoPacoteViagem: UILabel!
     
+    
     var pacoteSelecionado: PacoteViagem? = nil
     
     override func viewDidLoad() {
@@ -41,5 +42,8 @@ class DetalhesViagemViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func voltar(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
 
 }
