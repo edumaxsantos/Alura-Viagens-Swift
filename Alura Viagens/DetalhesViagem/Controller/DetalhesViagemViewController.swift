@@ -60,7 +60,7 @@ class DetalhesViagemViewController: UIViewController {
     
     @objc func exibeDataTextField(sender: UIDatePicker) {
         let formatador = DateFormatter()
-        formatador.dateFormat = "dd MM yyyy"
+        formatador.dateFormat = "dd/MM/yyyy"
         self.textFieldData.text = formatador.string(from: sender.date)
     }
     
