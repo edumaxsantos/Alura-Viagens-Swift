@@ -15,6 +15,7 @@ class DetalhesViagemViewController: UIViewController {
     @IBOutlet weak var labelDataViagem: UILabel!
     @IBOutlet weak var labelPrecoPacoteViagem: UILabel!
     @IBOutlet weak var scrollPrincipal: UIScrollView!
+    @IBOutlet weak var textFieldData: UITextField!
     
     
     var pacoteSelecionado: PacoteViagem? = nil
@@ -47,6 +48,20 @@ class DetalhesViagemViewController: UIViewController {
     */
     @IBAction func voltar(_ sender: UIButton) {
         self.dismiss(animated: true)
+    }
+    
+    
+    @IBAction func textFieldEntrouFoco(_ sender: UITextField) {
+        let datePickerView = UIDatePicker()
+        datePickerView.datePickerMode = .date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(exibeDataTextField(sender:)), for: .valueChanged)
+    }
+    
+    @objc func exibeDataTextField(sender: UIDatePicker) {
+        let formatador = DateFormatter()
+        formatador.dateFormat = "dd MM yyyy"
+        self.textFieldData.text = formatador.string(from: sender.date)
     }
     
     @objc func aumentarScroll(notification: Notification) {

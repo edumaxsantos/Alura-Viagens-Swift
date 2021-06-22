@@ -599,22 +599,25 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="número do cartão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MD9-hC-ctr">
                                                         <rect key="frame" x="0.0" y="0.0" width="355" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nome do cartão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wr5-ty-DCE">
                                                         <rect key="frame" x="0.0" y="39" width="355" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="data de vencimento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7cd-Ub-Ei5">
                                                         <rect key="frame" x="0.0" y="78" width="355" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="textFieldEntrouFoco:" destination="nXh-E9-qrd" eventType="editingDidBegin" id="VMM-qM-cRt"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haI-k2-oed">
                                                         <rect key="frame" x="0.0" y="117" width="355" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzb-nP-Lkf">
                                                         <rect key="frame" x="0.0" y="156" width="355" height="30"/>
@@ -656,6 +659,7 @@
                         <outlet property="labelPrecoPacoteViagem" destination="eVl-kr-IlR" id="A3w-S5-3mW"/>
                         <outlet property="labelTituloPacoteViagem" destination="QPv-xk-R3F" id="7UO-i0-sZP"/>
                         <outlet property="scrollPrincipal" destination="5xl-zA-dzn" id="xkW-d1-hIa"/>
+                        <outlet property="textFieldData" destination="7cd-Ub-Ei5" id="eM2-l6-Epr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3e2-Kx-8n5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
