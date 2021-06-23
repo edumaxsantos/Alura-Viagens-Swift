@@ -57,6 +57,14 @@ class DetalhesViagemViewController: UIViewController {
         sender.inputView = datePickerView
         datePickerView.addTarget(self, action: #selector(exibeDataTextField(sender:)), for: .valueChanged)
     }
+    @IBAction func botaoFinalizarCompra(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "confirmacaoPagamento") as! ConfirmacaoPagamentoViewController
+        
+        controller.pacoteComprado = pacoteSelecionado
+        
+        self.present(controller, animated: true)
+    }
     
     @objc func exibeDataTextField(sender: UIDatePicker) {
         let formatador = DateFormatter()
