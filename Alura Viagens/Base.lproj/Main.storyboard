@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ibm-u0-sKp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pPL-f5-JCk">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -8,10 +8,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="LaG-mF-fDq">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="pPL-f5-JCk" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PG0-P4-qnN">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ibm-u0-sKp" kind="relationship" relationship="rootViewController" id="N2K-ls-a0F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Huw-Zu-l4X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1713" y="87"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Gqw-9S-y2g">
             <objects>
                 <tabBarController id="Ibm-u0-sKp" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="LC3-4A-GcQ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VpD-Ml-jZ4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -239,7 +256,7 @@
                             <constraint firstItem="qe1-on-67a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xU2-v3-Ojv"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="procurar" image="magnifyingglass" catalog="system" id="bIz-pM-yRI"/>
+                    <tabBarItem key="tabBarItem" title="procurar" image="icon_search.png" id="bIz-pM-yRI"/>
                     <connections>
                         <outlet property="tabelaViagens" destination="bSb-dc-1pj" id="XK2-pb-bXk"/>
                         <outlet property="viewHoteis" destination="Xnz-K2-uqe" id="cdl-ZJ-kZZ"/>
@@ -270,7 +287,7 @@
                                         <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sgK-i4-KAw">
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="sgK-i4-KAw">
                                         <rect key="frame" x="0.0" y="33" width="345" height="238"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -363,7 +380,7 @@
                             <constraint firstItem="4qF-bi-I9o" firstAttribute="leading" secondItem="rn9-8D-gAe" secondAttribute="leading" constant="15" id="tEf-6E-SFX"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="pacotes" image="bag" catalog="system" id="g0G-V9-G7D"/>
+                    <tabBarItem key="tabBarItem" title="pacotes" image="icon_package.png" id="g0G-V9-G7D"/>
                     <connections>
                         <outlet property="colecaoPacotesViagem" destination="6x4-CW-hh7" id="Gj4-6j-uea"/>
                         <outlet property="labelContadorPacotes" destination="qMT-Uj-UGs" id="lJw-4E-IAh"/>
@@ -672,7 +689,7 @@
         <!--Confirmacao Pagamento View Controller-->
         <scene sceneID="dH1-Qs-SFe">
             <objects>
-                <viewController storyboardIdentifier="confirmacaoPagamento" modalPresentationStyle="overFullScreen" id="d1a-XK-Wc2" customClass="ConfirmacaoPagamentoViewController" customModule="Alura_Viagens" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="confirmacaoPagamento" id="d1a-XK-Wc2" customClass="ConfirmacaoPagamentoViewController" customModule="Alura_Viagens" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Icl-Jt-P3W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -686,7 +703,7 @@
                                         <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hSk-L2-r68">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hSk-L2-r68">
                                         <rect key="frame" x="0.0" y="28.5" width="355" height="130"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="130" id="W7A-om-duv"/>
@@ -738,6 +755,9 @@
                                         <state key="normal" title="voltar para home">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="botaoVoltarHome:" destination="d1a-XK-Wc2" eventType="touchUpInside" id="nn5-ud-pMb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -781,6 +801,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="botaoVoltarHome" destination="adO-ns-3OT" id="nSM-vo-K5I"/>
                         <outlet property="imagemPacoteViagem" destination="hSk-L2-r68" id="gK4-dD-pCg"/>
                         <outlet property="labelDataPacoteViagem" destination="SnN-0R-ufG" id="prS-fN-tJv"/>
                         <outlet property="labelDescricaoPacoteViagem" destination="OMv-bC-XJN" id="NiP-EY-mMF"/>
@@ -795,12 +816,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bag" catalog="system" width="128" height="128"/>
         <image name="icon_airplane.png" width="50" height="50"/>
         <image name="icon_back.png" width="50" height="50"/>
         <image name="icon_breakfast.png" width="50" height="50"/>
         <image name="icon_hotel.png" width="50" height="50"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="icon_package.png" width="25" height="25"/>
+        <image name="icon_search.png" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -63,7 +63,7 @@ class DetalhesViagemViewController: UIViewController {
         
         controller.pacoteComprado = pacoteSelecionado
         
-        self.present(controller, animated: true)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc func exibeDataTextField(sender: UIDatePicker) {
