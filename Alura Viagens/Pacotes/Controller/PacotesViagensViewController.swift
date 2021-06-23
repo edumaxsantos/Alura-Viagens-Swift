@@ -47,15 +47,8 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         
         let pacoteAtual = listaViagens[indexPath.item]
         
-        celulaPacote.labelTitulo.text = pacoteAtual.viagem.titulo
-        celulaPacote.labelPreco.text = "R$ \(pacoteAtual.viagem.preco)"
-        celulaPacote.labelQuantidadeDias.text = "\(pacoteAtual.viagem.quantidadeDeDias) dias"
-        celulaPacote.imagemViagem.image = UIImage(named: pacoteAtual.viagem.caminhoDaImagem)
+        celulaPacote.configuraCelula(pacoteViagem: pacoteAtual)
         
-        celulaPacote.layer.borderWidth = 0.5
-        celulaPacote.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
-        
-        celulaPacote.layer.cornerRadius = 8
         
         return celulaPacote
     }
