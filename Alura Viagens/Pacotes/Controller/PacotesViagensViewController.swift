@@ -61,11 +61,14 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     
     // MARK: - SearchDeleate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        listaViagens = listaComTodasViagens
-        if searchText != "" {
-            let filtroListaViagem = NSPredicate(format: "titulo contains[cd] %@", searchText)
-            let listaFiltrada: Array<PacoteViagem> = (listaViagens as NSArray).filtered(using: filtroListaViagem) as! Array
-            listaViagens = listaFiltrada
+//        listaViagens = listaComTodasViagens
+//        if searchText != "" {
+//            let filtroListaViagem = NSPredicate(format: "viagem.titulo contains[cd] %@", searchText)
+//            let listaFiltrada: Array<PacoteViagem> = (listaViagens as NSArray).filtered(using: filtroListaViagem) as! Array
+//            listaViagens = listaFiltrada
+//        }
+        listaViagens = searchText.isEmpty ? listaComTodasViagens : listaComTodasViagens.filter { pacote in
+            return pacote.viagem.titulo.localizedCaseInsensitiveContains(searchText)
         }
         self.labelContadorPacotes.text = self.atualizaContadorLabel()
         colecaoPacotesViagem.reloadData()
