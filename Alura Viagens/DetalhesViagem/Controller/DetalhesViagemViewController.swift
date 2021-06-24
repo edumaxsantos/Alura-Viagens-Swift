@@ -47,7 +47,9 @@ class DetalhesViagemViewController: UIViewController {
     }
     */
     @IBAction func voltar(_ sender: UIButton) {
-        self.dismiss(animated: true)
+        if let navigation = navigationController {
+            navigation.popViewController(animated: true)
+        }
     }
     
     
