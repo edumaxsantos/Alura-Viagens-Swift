@@ -39,6 +39,7 @@
 		FB5D05532674676D000C7348 /* img10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB5D05422674676D000C7348 /* img10.jpg */; };
 		FB5D05542674676D000C7348 /* icon_hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5D05432674676D000C7348 /* icon_hotel.png */; };
 		FB5D057E2683DE1D000C7348 /* ConfirmacaoPagamentoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D057D2683DE1D000C7348 /* ConfirmacaoPagamentoViewController.swift */; };
+		FB5D05F0268818F2000C7348 /* Validador.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D05EF268818F2000C7348 /* Validador.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		FB5D05422674676D000C7348 /* img10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img10.jpg; sourceTree = "<group>"; };
 		FB5D05432674676D000C7348 /* icon_hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_hotel.png; sourceTree = "<group>"; };
 		FB5D057D2683DE1D000C7348 /* ConfirmacaoPagamentoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmacaoPagamentoViewController.swift; sourceTree = "<group>"; };
+		FB5D05EF268818F2000C7348 /* Validador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validador.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				FB5D050C266F0D0B000C7348 /* Viagem.swift */,
 				FB5D052E2674668A000C7348 /* PacoteViagem.swift */,
+				FB5D05EF268818F2000C7348 /* Validador.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				FB5D05262671A276000C7348 /* PacotesViagensViewController.swift in Sources */,
 				FB5D050D266F0D0B000C7348 /* Viagem.swift in Sources */,
 				FB5D050F266F0D96000C7348 /* ViagemDAO.swift in Sources */,
+				FB5D05F0268818F2000C7348 /* Validador.swift in Sources */,
 				FB5D05282671A389000C7348 /* PacoteViagemCollectionViewCell.swift in Sources */,
 				FB5D057E2683DE1D000C7348 /* ConfirmacaoPagamentoViewController.swift in Sources */,
 				FB5D04FD266EEF61000C7348 /* ViewController.swift in Sources */,

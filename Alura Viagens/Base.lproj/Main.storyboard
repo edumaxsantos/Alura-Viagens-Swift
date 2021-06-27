@@ -428,7 +428,7 @@
             <objects>
                 <viewController storyboardIdentifier="detalhes" modalPresentationStyle="overFullScreen" id="nXh-E9-qrd" customClass="DetalhesViagemViewController" customModule="Alura_Viagens" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lop-0g-oGR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xhj-w3-pwL">
@@ -451,7 +451,7 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xl-zA-dzn">
-                                <rect key="frame" x="10" y="185" width="300" height="383"/>
+                                <rect key="frame" x="10" y="185" width="300" height="515"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FVf-aV-Fqa">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="488.5"/>
@@ -776,6 +776,7 @@
                             <constraint firstItem="xhj-w3-pwL" firstAttribute="leading" secondItem="pZg-U3-Ch1" secondAttribute="leading" id="sC4-Rr-stu"/>
                         </constraints>
                     </view>
+                    <size key="freeformSize" width="320" height="700"/>
                     <connections>
                         <outlet property="imagemPacoteViagem" destination="xhj-w3-pwL" id="Idw-bn-09f"/>
                         <outlet property="labelDataViagem" destination="yOD-Bs-w0G" id="v92-MU-fEV"/>
@@ -784,6 +785,9 @@
                         <outlet property="labelTituloPacoteViagem" destination="QPv-xk-R3F" id="7UO-i0-sZP"/>
                         <outlet property="scrollPrincipal" destination="5xl-zA-dzn" id="xkW-d1-hIa"/>
                         <outlet property="textFieldData" destination="7cd-Ub-Ei5" id="eM2-l6-Epr"/>
+                        <outlet property="textFieldNomeCartao" destination="Wr5-ty-DCE" id="3Mc-1o-Bhz"/>
+                        <outlet property="textFieldNumeroCartao" destination="MD9-hC-ctr" id="CVf-TA-mla"/>
+                        <outlet property="textFieldSenhaCartao" destination="haI-k2-oed" id="0hZ-on-C8S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3e2-Kx-8n5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

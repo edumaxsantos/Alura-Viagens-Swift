@@ -17,6 +17,9 @@ class DetalhesViagemViewController: UIViewController {
     @IBOutlet weak var scrollPrincipal: UIScrollView!
     @IBOutlet weak var textFieldData: UITextField!
     
+    @IBOutlet weak var textFieldNumeroCartao: UITextField!
+    @IBOutlet weak var textFieldNomeCartao: UITextField!
+    @IBOutlet weak var textFieldSenhaCartao: UITextField!
     
     var pacoteSelecionado: PacoteViagem? = nil
     
@@ -60,12 +63,21 @@ class DetalhesViagemViewController: UIViewController {
         datePickerView.addTarget(self, action: #selector(exibeDataTextField(sender:)), for: .valueChanged)
     }
     @IBAction func botaoFinalizarCompra(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "confirmacaoPagamento") as! ConfirmacaoPagamentoViewController
         
-        controller.pacoteComprado = pacoteSelecionado
+        let textFields = [textFieldNumeroCartao, textFieldNomeCartao, textFieldData, textFieldSenhaCartao]
         
-        self.navigationController?.pushViewController(controller, animated: true)
+        if Validador().validaTextFields(textFields) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "confirmacaoPagamento") as! ConfirmacaoPagamentoViewController
+            
+            controller.pacoteComprado = pacoteSelecionado
+            
+            self.navigationController?.pushViewController(controller, animated: true)
+        } else {
+            
+        }
+        
+        
     }
     
     @objc func exibeDataTextField(sender: UIDatePicker) {
