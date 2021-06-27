@@ -56,8 +56,13 @@ class AnimacaoTransicaoPersonalizada: NSObject, UIViewControllerAnimatedTransiti
         
         contexto.addSubview(imagemDeTransicao)
         
+        viewAtual.frame = apresentarViewController ? CGRect(x: viewInicial.frame.width, y: 0, width: viewFinal.frame.width, height: viewFinal.frame.height) : viewInicial.frame
+        
+        viewAtual.layoutIfNeeded()
+        
         UIView.animate(withDuration: duracao) {
-            imagemDeTransicao.frame = imagemDaViagem.frame
+            imagemDeTransicao.frame = self.apresentarViewController ? imagemDaViagem.frame : self.frameInicial
+            viewAtual.frame = self.apresentarViewController ? viewInicial.frame : CGRect(x: viewInicial.frame.width, y: 0, width: viewFinal.frame.width, height: viewFinal.frame.height)
         } completion: { (_) in
             imagemDeTransicao.removeFromSuperview()
             transitionContext.completeTransition(true)
