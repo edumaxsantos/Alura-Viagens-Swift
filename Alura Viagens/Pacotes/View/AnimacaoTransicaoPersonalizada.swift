@@ -31,14 +31,25 @@ class AnimacaoTransicaoPersonalizada: NSObject, UIViewControllerAnimatedTransiti
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let viewFinal = transitionContext.view(forKey: UITransitionContextViewKey.to) else { return }
         
-        let imagemDaViagem = viewFinal.viewWithTag(1) as? UIImageView
-        imagemDaViagem?.image = imagem
+        guard let imagemDaViagem = viewFinal.viewWithTag(1) as? UIImageView else { return }
+        imagemDaViagem.image = imagem
         
         let imagemDeTransicao = UIImageView(frame: frameInicial)
         imagemDeTransicao.image = imagem
         
         let contexto = transitionContext.containerView
+        contexto.addSubview(viewFinal)
         contexto.addSubview(imagemDeTransicao)
+        
+        UIView.animate(withDuration: duracao) {
+            imagemDeTransicao.frame = imagemDaViagem.frame
+        } completion: { (_) in
+            imagemDeTransicao.removeFromSuperview()
+            transitionContext.completeTransition(true)
+        }
+
+        
+        
     }
     
 
