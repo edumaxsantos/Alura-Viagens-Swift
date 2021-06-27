@@ -40,6 +40,8 @@
 		FB5D05542674676D000C7348 /* icon_hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5D05432674676D000C7348 /* icon_hotel.png */; };
 		FB5D057E2683DE1D000C7348 /* ConfirmacaoPagamentoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D057D2683DE1D000C7348 /* ConfirmacaoPagamentoViewController.swift */; };
 		FB5D05F0268818F2000C7348 /* Validador.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D05EF268818F2000C7348 /* Validador.swift */; };
+		FB5D05F226882187000C7348 /* launch-screen.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FB5D05F126882187000C7348 /* launch-screen.jpeg */; };
+		FB5D05F52688221A000C7348 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D05F42688221A000C7348 /* LaunchScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		FB5D05432674676D000C7348 /* icon_hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_hotel.png; sourceTree = "<group>"; };
 		FB5D057D2683DE1D000C7348 /* ConfirmacaoPagamentoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmacaoPagamentoViewController.swift; sourceTree = "<group>"; };
 		FB5D05EF268818F2000C7348 /* Validador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validador.swift; sourceTree = "<group>"; };
+		FB5D05F126882187000C7348 /* launch-screen.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "launch-screen.jpeg"; sourceTree = "<group>"; };
+		FB5D05F42688221A000C7348 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 		FB5D04F7266EEF61000C7348 /* Alura Viagens */ = {
 			isa = PBXGroup;
 			children = (
+				FB5D05F3268821FA000C7348 /* LaunchScreen */,
 				FB5D04F8266EEF61000C7348 /* AppDelegate.swift */,
 				FB5D04FA266EEF61000C7348 /* SceneDelegate.swift */,
 				FB5D051D26703FFE000C7348 /* Model */,
@@ -223,6 +228,7 @@
 		FB5D05322674676D000C7348 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				FB5D05F126882187000C7348 /* launch-screen.jpeg */,
 				FB5D05332674676D000C7348 /* icon_back.png */,
 				FB5D05342674676D000C7348 /* icon_search@2x.png */,
 				FB5D05352674676D000C7348 /* icon_package@2x.png */,
@@ -259,6 +265,14 @@
 				FB5D057D2683DE1D000C7348 /* ConfirmacaoPagamentoViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB5D05F3268821FA000C7348 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FB5D05F42688221A000C7348 /* LaunchScreenViewController.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +348,7 @@
 				FB5D05532674676D000C7348 /* img10.jpg in Resources */,
 				FB5D05452674676D000C7348 /* icon_search@2x.png in Resources */,
 				FB5D05492674676D000C7348 /* icon_airplane.png in Resources */,
+				FB5D05F226882187000C7348 /* launch-screen.jpeg in Resources */,
 				FB5D054C2674676D000C7348 /* img6.jpg in Resources */,
 				FB5D05542674676D000C7348 /* icon_hotel.png in Resources */,
 				FB5D05472674676D000C7348 /* img9.jpg in Resources */,
@@ -354,6 +369,7 @@
 				FB5D05F0268818F2000C7348 /* Validador.swift in Sources */,
 				FB5D05282671A389000C7348 /* PacoteViagemCollectionViewCell.swift in Sources */,
 				FB5D057E2683DE1D000C7348 /* ConfirmacaoPagamentoViewController.swift in Sources */,
+				FB5D05F52688221A000C7348 /* LaunchScreenViewController.swift in Sources */,
 				FB5D04FD266EEF61000C7348 /* ViewController.swift in Sources */,
 				FB5D0511266F0F93000C7348 /* TableViewCell.swift in Sources */,
 				FB5D052F2674668A000C7348 /* PacoteViagem.swift in Sources */,
