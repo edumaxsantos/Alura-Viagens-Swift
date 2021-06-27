@@ -39,16 +39,23 @@ class DetalhesViagemViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func pulsar(_ button: UIButton) {
+        let pulsar = CASpringAnimation(keyPath: "transform.scale")
+        pulsar.duration = 0.5
+        pulsar.autoreverses = true
+        pulsar.repeatCount = 1
+        pulsar.fromValue = 0.95
+        pulsar.toValue = 1.0
+        
+        pulsar.initialVelocity = 0.5
+        pulsar.damping = 1.0
+        
+        button.layer.add(pulsar, forKey: nil)
+        
     }
-    */
+    
+    // MARK: - IBActions
+    
     @IBAction func voltar(_ sender: UIButton) {
         if let navigation = navigationController {
             navigation.popViewController(animated: true)
@@ -65,16 +72,17 @@ class DetalhesViagemViewController: UIViewController {
     @IBAction func botaoFinalizarCompra(_ sender: UIButton) {
         
         let textFields = [textFieldNumeroCartao, textFieldNomeCartao, textFieldData, textFieldSenhaCartao]
-        
+
         if Validador().validaTextFields(textFields) {
+            pulsar(sender)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "confirmacaoPagamento") as! ConfirmacaoPagamentoViewController
-            
+
             controller.pacoteComprado = pacoteSelecionado
-            
+
             self.navigationController?.pushViewController(controller, animated: true)
         } else {
-            
+
         }
         
         
