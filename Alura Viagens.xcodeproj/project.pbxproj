@@ -42,6 +42,7 @@
 		FB5D05F0268818F2000C7348 /* Validador.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D05EF268818F2000C7348 /* Validador.swift */; };
 		FB5D05F226882187000C7348 /* launch-screen.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FB5D05F126882187000C7348 /* launch-screen.jpeg */; };
 		FB5D05F52688221A000C7348 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D05F42688221A000C7348 /* LaunchScreenViewController.swift */; };
+		FB5D05F72688D510000C7348 /* AnimacaoTransicaoPersonalizada.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D05F62688D510000C7348 /* AnimacaoTransicaoPersonalizada.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		FB5D05EF268818F2000C7348 /* Validador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validador.swift; sourceTree = "<group>"; };
 		FB5D05F126882187000C7348 /* launch-screen.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "launch-screen.jpeg"; sourceTree = "<group>"; };
 		FB5D05F42688221A000C7348 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		FB5D05F62688D510000C7348 /* AnimacaoTransicaoPersonalizada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimacaoTransicaoPersonalizada.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				FB5D05272671A389000C7348 /* PacoteViagemCollectionViewCell.swift */,
+				FB5D05F62688D510000C7348 /* AnimacaoTransicaoPersonalizada.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				FB5D050D266F0D0B000C7348 /* Viagem.swift in Sources */,
 				FB5D050F266F0D96000C7348 /* ViagemDAO.swift in Sources */,
 				FB5D05F0268818F2000C7348 /* Validador.swift in Sources */,
+				FB5D05F72688D510000C7348 /* AnimacaoTransicaoPersonalizada.swift in Sources */,
 				FB5D05282671A389000C7348 /* PacoteViagemCollectionViewCell.swift in Sources */,
 				FB5D057E2683DE1D000C7348 /* ConfirmacaoPagamentoViewController.swift in Sources */,
 				FB5D05F52688221A000C7348 /* LaunchScreenViewController.swift in Sources */,

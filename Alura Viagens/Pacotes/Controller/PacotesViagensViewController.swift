@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PacotesViagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UICollectionViewDelegate {
+class PacotesViagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UICollectionViewDelegate, UINavigationControllerDelegate {
 
     // MARK: - Outlets
     
@@ -19,6 +19,8 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     
     let listaComTodasViagens: [PacoteViagem] = PacoteViagemDAO().retornaTodasAsViagens()
     var listaViagens: [PacoteViagem] = []
+    var pacoteSelecionado: PacoteViagem?
+    var frameSelecionado: CGRect?
     
     // MARK: - Life cycle
     
@@ -27,6 +29,7 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         self.colecaoPacotesViagem.dataSource = self
         self.colecaoPacotesViagem.delegate = self
         self.pesquisarViagens.delegate = self
+        self.navigationController?.delegate = self
         listaViagens = listaComTodasViagens
         self.labelContadorPacotes.text = self.atualizaContadorLabel()
 
@@ -76,14 +79,35 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     // MARK: - Collection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let pacote = listaViagens[indexPath.item]
+        pacoteSelecionado = pacote
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(identifier: "detalhes") as! DetalhesViagemViewController
         controller.pacoteSelecionado = pacote
+        
+        let atributosItemSelecionado = collectionView.layoutAttributesForItem(at: indexPath)
+        frameSelecionado = atributosItemSelecionado?.frame
+        
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func atualizaContadorLabel() -> String {
         return listaViagens.count == 1 ? "1 pacote encontrado" : "\(listaViagens.count) pacotes encontrados"
+    }
+    
+    // MARK: - UINavigationControllerDelegate
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let pacoteSelecionado = pacoteSelecionado else { return nil }
+        let caminhoDaImagem = pacoteSelecionado.viagem.caminhoDaImagem
+        guard let imagem = UIImage(named: caminhoDaImagem) else { return nil }
+        guard let frameInicial = frameSelecionado else { return nil }
+        
+        switch operation {
+            case .push:
+                return AnimacaoTransicaoPersonalizada(duracao: 0.5, imagem: imagem, frameInicial: frameInicial)
+            default:
+                // TO DO: Implementar pop
+                return AnimacaoTransicaoPersonalizada(duracao: 0.5, imagem: imagem, frameInicial: frameInicial)
+        }
     }
 
 }
